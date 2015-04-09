@@ -388,6 +388,13 @@ module.exports = function (grunt) {
     }
   });
 
+  
+  grunt.registerTask('help', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
+    grunt.log.warn('grunt serve - Compile then start a connect web server');
+    grunt.log.warn('grunt test - Runs the tests including Karam');
+    grunt.log.warn('grunt build - Runs the production tasks');
+   
+  });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
