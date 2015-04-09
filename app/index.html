@@ -42,7 +42,7 @@
     <![endif]-->
 
   </head>
-  <body ng-app="angualrSkyApp">
+  <body ng-app="angualrSkyApp" ng-controller="routeCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -57,7 +57,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" ng-href="#/">
                 <img src="images/img/logo.png" alt="logo" />
             </a>
         </div>
@@ -175,13 +175,21 @@
         </ul>
     </header>
     <!-- end navbar -->
-    <div class="container">
 
-      <div ng-view=""></div>
+    <!-- include the side bar -->
+    <div ng-if="showSideMenu" ng-include="'views/partials/side-menu.html'"></div>
+    <!-- end the side bar -->
+    
+    <!-- Main view area -->
+    <div ng-view="" onload="runShowSideMenu()">
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Bus #20 team</p>
-      </div>
+    </div>
+    <!-- End main view area -->
+
+
+   
+     <div class="footer">
+        <div class="container"><p><span class="glyphicon glyphicon-heart"></span> from the Bus #20 team</p></div>
     </div>
 
 
@@ -221,6 +229,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/personal_info.js"></script>
+        <script src="scripts/controllers/route.js"></script>
         <!-- endbuild -->
 
 <!-- TEMPLATE HEADER ADDED BELOW HERE -->
