@@ -10,5 +10,5 @@ For now you wnat to run `grunt serve`
 
 ### TODO
 
-*Refactor the `Gruntfile.js` to accomaodate the added template dependencies
+* Refactor the `Gruntfile.js` to accomaodate the added template dependencies
  
