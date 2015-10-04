@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
+    <!-- This is HTML 5 mode so we can remove the hashbangs in the URL /# -->
+    <base href="/">
+
 	<!-- TEMPLATE HEADER ADDED BELOW HERE -->
 	    <!-- bootstrap -->
     <link href="styles/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -57,7 +60,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ng-href="#/">
+            <a class="navbar-brand" ng-href="/">
                 <img src="images/img/logo.png" alt="logo" />
             </a>
         </div>
@@ -149,13 +152,13 @@
                     </div>
                 </div>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
+            <li class="notification-dropdown hidden-xs hidden-sm">
+                <a href="#" class="trigger" data-toggle="dropdown">
                     Your account
                     <b class="caret"></b>
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#/personal-info">Personal info</a></li>
+                <ul class="dropdown-menu pop-dialog">
+                    <li><a href="/personal-info">Personal info</a></li>
                     <li><a href="#">Account settings</a></li>
                     <li><a href="#">Billing</a></li>
                     <li><a href="#">Export your data</a></li>
@@ -163,7 +166,7 @@
                 </ul>
             </li>
             <li class="settings hidden-xs hidden-sm">
-                <a href="#/personal-info" role="button">
+                <a href="/personal-info" role="button">
                     <i class="icon-cog"></i>
                 </a>
             </li>
@@ -181,14 +184,14 @@
     <!-- end the side bar -->
     
     <!-- Main view area -->
-    <div ng-view="" onload="runShowSideMenu()">
+    <div ui-view onload="runShowSideMenu()">
 
     </div>
     <!-- End main view area -->
 
 
    
-     <div class="footer">
+    <div class="footer">
         <div class="container"><p><span class="glyphicon glyphicon-heart"></span> from the Bus #20 team</p></div>
     </div>
 
@@ -221,15 +224,21 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <!-- controllers -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/personal_info.js"></script>
         <script src="scripts/controllers/route.js"></script>
+        <script src="scripts/controllers/users.js"></script>
+
+        <!-- services -->
+        <script src="scripts/services/users-service.js"></script>
         <!-- endbuild -->
 
 <!-- TEMPLATE HEADER ADDED BELOW HERE -->
@@ -249,77 +258,77 @@
 	        $(function () {
 
 	            // jQuery Knobs
-	            $(".knob").knob();
+	            // $(".knob").knob();
 
 
 
 	            // jQuery UI Sliders
-	            $(".slider-sample1").slider({
-	                value: 100,
-	                min: 1,
-	                max: 500
-	            });
-	            $(".slider-sample2").slider({
-	                range: "min",
-	                value: 130,
-	                min: 1,
-	                max: 500
-	            });
-	            $(".slider-sample3").slider({
-	                range: true,
-	                min: 0,
-	                max: 500,
-	                values: [ 40, 170 ],
-	            });
+	            // $(".slider-sample1").slider({
+	            //     value: 100,
+	            //     min: 1,
+	            //     max: 500
+	            // });
+	            // $(".slider-sample2").slider({
+	            //     range: "min",
+	            //     value: 130,
+	            //     min: 1,
+	            //     max: 500
+	            // });
+	            // $(".slider-sample3").slider({
+	            //     range: true,
+	            //     min: 0,
+	            //     max: 500,
+	            //     values: [ 40, 170 ],
+	            // });
 
 	            
 
 	            // jQuery Flot Chart
-	            var visits = [[1, 50], [2, 40], [3, 45], [4, 23],[5, 55],[6, 65],[7, 61],[8, 70],[9, 65],[10, 75],[11, 57],[12, 59]];
-	            var visitors = [[1, 25], [2, 50], [3, 23], [4, 48],[5, 38],[6, 40],[7, 47],[8, 55],[9, 43],[10,50],[11,47],[12, 39]];
+	            // var visits = [[1, 50], [2, 40], [3, 45], [4, 23],[5, 55],[6, 65],[7, 61],[8, 70],[9, 65],[10, 75],[11, 57],[12, 59]];
+	            // var visitors = [[1, 25], [2, 50], [3, 23], [4, 48],[5, 38],[6, 40],[7, 47],[8, 55],[9, 43],[10,50],[11,47],[12, 39]];
 
-	            var plot = $.plot($("#statsChart"),
-	                [ { data: visits, label: "Signups"},
-	                 { data: visitors, label: "Visits" }], {
-	                    series: {
-	                        lines: { show: true,
-	                                lineWidth: 1,
-	                                fill: true, 
-	                                fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
-	                             },
-	                        points: { show: true, 
-	                                 lineWidth: 2,
-	                                 radius: 3
-	                             },
-	                        shadowSize: 0,
-	                        stack: true
-	                    },
-	                    grid: { hoverable: true, 
-	                           clickable: true, 
-	                           tickColor: "#f9f9f9",
-	                           borderWidth: 0
-	                        },
-	                    legend: {
-	                            // show: false
-	                            labelBoxBorderColor: "#fff"
-	                        },  
-	                    colors: ["#a7b5c5", "#30a0eb"],
-	                    xaxis: {
-	                        ticks: [[1, "JAN"], [2, "FEB"], [3, "MAR"], [4,"APR"], [5,"MAY"], [6,"JUN"], 
-	                               [7,"JUL"], [8,"AUG"], [9,"SEP"], [10,"OCT"], [11,"NOV"], [12,"DEC"]],
-	                        font: {
-	                            size: 12,
-	                            family: "Open Sans, Arial",
-	                            variant: "small-caps",
-	                            color: "#697695"
-	                        }
-	                    },
-	                    yaxis: {
-	                        ticks:3, 
-	                        tickDecimals: 0,
-	                        font: {size:12, color: "#9da3a9"}
-	                    }
-	                 });
+	            // var plot = $.plot($("#statsChart"),
+	            //     [ { data: visits, label: "Signups"},
+	            //      { data: visitors, label: "Visits" }], {
+	            //         series: {
+	            //             lines: { show: true,
+	            //                     lineWidth: 1,
+	            //                     fill: true, 
+	            //                     fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
+	            //                  },
+	            //             points: { show: true, 
+	            //                      lineWidth: 2,
+	            //                      radius: 3
+	            //                  },
+	            //             shadowSize: 0,
+	            //             stack: true
+	            //         },
+	            //         grid: { hoverable: true, 
+	            //                clickable: true, 
+	            //                tickColor: "#f9f9f9",
+	            //                borderWidth: 0
+	            //             },
+	            //         legend: {
+	            //                 // show: false
+	            //                 labelBoxBorderColor: "#fff"
+	            //             },  
+	            //         colors: ["#a7b5c5", "#30a0eb"],
+	            //         xaxis: {
+	            //             ticks: [[1, "JAN"], [2, "FEB"], [3, "MAR"], [4,"APR"], [5,"MAY"], [6,"JUN"], 
+	            //                    [7,"JUL"], [8,"AUG"], [9,"SEP"], [10,"OCT"], [11,"NOV"], [12,"DEC"]],
+	            //             font: {
+	            //                 size: 12,
+	            //                 family: "Open Sans, Arial",
+	            //                 variant: "small-caps",
+	            //                 color: "#697695"
+	            //             }
+	            //         },
+	            //         yaxis: {
+	            //             ticks:3, 
+	            //             tickDecimals: 0,
+	            //             font: {size:12, color: "#9da3a9"}
+	            //         }
+	            //      });
 
 	            function showTooltip(x, y, contents) {
 	                $('<div id="tooltip">' + contents + '</div>').css( {

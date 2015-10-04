@@ -1,0 +1,243 @@
+{
+    "users": [{
+        "_id": "56108d03820379f1cb5ec415",
+        "index": 0,
+        "isActive": false,
+        "picture": "http://placehold.it/70x70",
+        "age": 32,
+        "name": {
+            "first": "Franco",
+            "last": "Tillman"
+        },
+        "company": "COMFIRM",
+        "email": "franco.tillman@comfirm.us",
+        "phone": "+64 (907) 463-3881",
+        "address": "206 Clymer Street, Rivers, Iowa, 9572",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d03775ee76d01dd669d",
+        "index": 1,
+        "isActive": false,
+        "picture": "http://placehold.it/70x70",
+        "age": 39,
+        "name": {
+            "first": "Higgins",
+            "last": "Ballard"
+        },
+        "company": "MONDICIL",
+        "email": "higgins.ballard@mondicil.name",
+        "phone": "+64 (855) 483-3423",
+        "address": "761 Montana Place, Denio, Palau, 6629",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d03f66cb9d0439fc0ba",
+        "index": 2,
+        "isActive": true,
+        "picture": "http://placehold.it/70x70",
+        "age": 31,
+        "name": {
+            "first": "Yvonne",
+            "last": "Workman"
+        },
+        "company": "NETPLAX",
+        "email": "yvonne.workman@netplax.info",
+        "phone": "+64 (822) 472-2393",
+        "address": "479 Ashland Place, Ronco, Minnesota, 5436",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d0331a7841c5d9a5315",
+        "index": 3,
+        "isActive": false,
+        "picture": "http://placehold.it/70x70",
+        "age": 26,
+        "name": {
+            "first": "Michelle",
+            "last": "Greene"
+        },
+        "company": "ZAJ",
+        "email": "michelle.greene@zaj.org",
+        "phone": "+64 (906) 420-2730",
+        "address": "988 Bennet Court, Linwood, Rhode Island, 3315",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d0310ffbe0995a099d6",
+        "index": 4,
+        "isActive": true,
+        "picture": "http://placehold.it/70x70",
+        "age": 27,
+        "name": {
+            "first": "Lorraine",
+            "last": "Flynn"
+        },
+        "company": "QUAREX",
+        "email": "lorraine.flynn@quarex.com",
+        "phone": "+64 (883) 482-2939",
+        "address": "660 Sharon Street, Concho, Kentucky, 4141",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d033b6fe14c8bf9485d",
+        "index": 5,
+        "isActive": false,
+        "picture": "http://placehold.it/70x70",
+        "age": 39,
+        "name": {
+            "first": "Marlene",
+            "last": "Mcbride"
+        },
+        "company": "NAMEBOX",
+        "email": "marlene.mcbride@namebox.ca",
+        "phone": "+64 (968) 417-3387",
+        "address": "580 Applegate Court, Allison, Puerto Rico, 8038",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d03176524437f53f4e4",
+        "index": 6,
+        "isActive": false,
+        "picture": "http://placehold.it/70x70",
+        "age": 30,
+        "name": {
+            "first": "Everett",
+            "last": "Livingston"
+        },
+        "company": "QABOOS",
+        "email": "everett.livingston@qaboos.biz",
+        "phone": "+64 (804) 518-3636",
+        "address": "793 Falmouth Street, Blue, Idaho, 5376",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d0364375d182a73e11e",
+        "index": 7,
+        "isActive": false,
+        "picture": "http://placehold.it/70x70",
+        "age": 20,
+        "name": {
+            "first": "White",
+            "last": "Garcia"
+        },
+        "company": "EPLOSION",
+        "email": "white.garcia@eplosion.biz",
+        "phone": "+64 (918) 493-3941",
+        "address": "389 Bergen Street, Germanton, Michigan, 4293",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d034ec6c8a55c6e8445",
+        "index": 8,
+        "isActive": true,
+        "picture": "http://placehold.it/70x70",
+        "age": 26,
+        "name": {
+            "first": "Jan",
+            "last": "Durham"
+        },
+        "company": "ISOLOGICS",
+        "email": "jan.durham@isologics.tv",
+        "phone": "+64 (820) 419-2337",
+        "address": "357 Lefferts Place, Springville, Virginia, 9618",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }, {
+        "_id": "56108d035e8a2df4e92be828",
+        "index": 9,
+        "isActive": true,
+        "picture": "http://placehold.it/70x70",
+        "age": 37,
+        "name": {
+            "first": "Robert",
+            "last": "Cohen"
+        },
+        "company": "ZILLA",
+        "email": "robert.cohen@zilla.net",
+        "phone": "+64 (943) 406-2602",
+        "address": "704 Baycliff Terrace, Barclay, Guam, 4133",
+        "friends": [{
+            "id": 0,
+            "name": "West Barry"
+        }, {
+            "id": 1,
+            "name": "Spence Pace"
+        }, {
+            "id": 2,
+            "name": "Daphne Love"
+        }]
+    }]
+}

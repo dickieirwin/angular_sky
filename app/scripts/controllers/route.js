@@ -10,25 +10,24 @@
 angular.module('angualrSkyApp')
     .controller('routeCtrl', function($scope, $location) {
 
-    	// if ($location.path()) {
-    	// 	var foo = $location.path();
-    	// 	console.log(foo)
-    	// }
+    	// quick helper to check the path is passed through correctly
+         //    if ($location.path()) {
+         //     var foo = $location.path();
+         //     console.log(foo)
+         // }
+
     	
     	$scope.runShowSideMenu = function (){
-    		$scope.showSideMenu = $location.path() === '/';
-    		console.log('view changed'); 
-    	}
-        
+            var path = $location.path();
+            if (path == 'personal-info') {
+                $scope.showSideMenu = false;
+            } else {
+               $scope.showSideMenu = true; 
+            }
+    		
+    		// console.log($scope.showSideMenu); 
+
+            return $scope.showSideMenu;
+    	}        
         
     });
-
-
-
-
-
-// app.controller('AppCtrl', ['$scope', function($scope){
-//     $scope.onViewLoad = function(){
-//       console.log('view changed');  
-//     };
-// }])

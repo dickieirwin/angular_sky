@@ -14,4 +14,8 @@ angular.module('angualrSkyApp')
       'AngularJS',
       'Karma'
     ];
+
+    console.log('etyeryrtyrt');
+
+
   });

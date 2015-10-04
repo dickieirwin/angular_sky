@@ -21,6 +21,8 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+  // enable Angular's HTML5 mode and add redirects to index.html for all URLs while using grunt serve see also line in livereload: {}
+  var modRewrite = require('connect-modrewrite');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -77,6 +79,7 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
+              modRewrite(['^[^\\.]*$ /index.html [L]']),  // enable Angular's HTML5 mode and add redirects to index.html for all URLs while using grunt serve
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
