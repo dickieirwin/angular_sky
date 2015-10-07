@@ -47,10 +47,36 @@ angular
                     controller: 'PersonalInfoCtrl'
                 })
                 .state('users', {
+                    abstract: true, //To prepend url to child state urls
+                    //This means this state is abstract and not viewable ie /users wont work
                     url: '/users',
                     templateUrl: 'views/users.html',
+                    // Note: abstract still needs a ui-view for its children to populate.
+                    // You can simply add it inline here.  Or add one to the template
+                    // template: '<ui-view/>'
+                })
+                .state('users.list', {
+                    // url will be '/users/list'
+                    url: '/list',
+                    // loaded into ui-view of parent's template
+                    templateUrl: 'views/users.list.html',
                     controller: 'UsersCtrl',
                     data: 'users_example.json'
+                })
+                .state('users.single', {
+                    // url will be '/contacts/single'
+                    url: '/single/:id',
+                    // loaded into ui-view of parent's template
+                    templateUrl: 'views/users.single.html',
+                    //We can make a small controller right here if we want
+                    controller: function($scope,$stateParams) {
+                    	var userId = $stateParams;
+                        $scope.data = userId;
+                        console.log($scope.data);
+                    },
+                        onEnter: function() {
+                        console.log("enter user/single");
+                    }
                 })
                 .state('/about', {
                     templateUrl: 'views/about.html',

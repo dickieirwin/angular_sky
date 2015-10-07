@@ -10,14 +10,11 @@
 angular.module('angualrSkyApp')
     .controller('UsersCtrl', function($scope, UsersService) {
 
-        // console.log(UsersService);
 
         UsersService.success(function(data) {
         	$scope.userData = data;
-            $scope.test = "Hello " + data.users[0].name.first;
-            console.log($scope.test);
-
-            console.log($scope.userData.users[1].name.first);
+            // $scope.test = "Hello " + data.users[0].name.first;
+            // console.log($scope.test);
             return $scope.userData;
 
         }).error(function() {

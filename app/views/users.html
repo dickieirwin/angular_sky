@@ -1,37 +1,6 @@
-<div data-ng-controller="UsersCtrl" class="content">
+<div class="content">
     <div class="container">
         <div class="well well-lg col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-            <div class="list-group">
-                <div class="row list-group-item" ng-repeat="user in userData.users">
-                    <div class="col-xs-3 col-md-2">
-                        <a href="#" class="">
-                            <img class="img-circle" src="{{user.picture}}" alt="{{user.name.first}}">
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-md-4">
-                        <a href="#" class="">
-                            <h4 class="list-group-item-heading">{{user.name.first}} {{user.name.last}}</h4>
-                            <p class="list-group-item-text">{{user.email}}</p>
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-md-4">
-                        <a href="#" class="">
-                            <p class="text-muted">Company</p>
-                            <h5 class="list-group-item-heading">{{user.company}}</h5>
-                            <small>{{user.address}}</small>
-                        </a>
-                    </div>
-                    <div class="col-xs-3 col-md-2">
-                        <span ng-if="user.isActive" class="pull-right label label-success">Active</span>
-                        <span ng-if="!user.isActive" class="pull-right label label-warning">Disabled</span>
-                    </div>
-                </div>
-            </div>
+            <div ui-view></div>
         </div>
     </div>
-    <!-- <div class="list-group">
-  <a href="#" class="list-group-item active">
-    <h4 class="list-group-item-heading">List group item heading</h4>
-    <p class="list-group-item-text">...</p>
-  </a>
-</div> -->

@@ -11,15 +11,14 @@ angular.module('angualrSkyApp')
     .controller('routeCtrl', function($scope, $location) {
 
     	// quick helper to check the path is passed through correctly
-         //    if ($location.path()) {
-         //     var foo = $location.path();
-         //     console.log(foo)
-         // }
-
+            if ($location.url()) {
+             var foo = $location.url();
+             console.log(foo)
+         }
     	
     	$scope.runShowSideMenu = function (){
-            var path = $location.path();
-            if (path == 'personal-info') {
+            var path = $location.url();
+            if (path == '/personal-info') {
                 $scope.showSideMenu = false;
             } else {
                $scope.showSideMenu = true; 
